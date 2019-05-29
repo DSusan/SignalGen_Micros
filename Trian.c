@@ -4,11 +4,28 @@ void  TRI_1()
     OSCCON=0b01010111;
     TRISAbits.RA6=0; 
     TRISCbits.RC2=0; 
-    int valoresSeno [20]= {10,20,30,40,50,60,70,80,90,100,90,80,70,60,50,40,30,20,10,0};
+    int sinValues [20];
+    int x , aux;
+    aux=0;
+    for ( x = 0; i <20; i++)
+    {
+        if (x<10)
+        {
+            aux -=10;
+        }
+        else
+        {
+            aux +=10;
+        }
+        sinValues[x]=aux;
+        
+    }
+    
+
     int i, j,k;
     for (i=0;i<20;i++)
     {    
-        valoresSeno [i]=valoresSeno [i];
+        sinValues [i]=sinValues [i];
     }
     
     while(1)
@@ -16,12 +33,12 @@ void  TRI_1()
        
         for (i=0;i<20;i++)
         {    
-            for (j=0;j<valoresSeno[i];j++)
+            for (j=0;j<sinValues[i];j++)
             {
                PORTCbits.RC2=1;
                PORTAbits.RA6=1;
             }
-            k=100-valoresSeno[i];
+            k=100-sinValues[i];
             for (j=0;j<k;j++)
             {
                 PORTCbits.RC2=0;
@@ -37,11 +54,26 @@ void  TRI_2()
     OSCCON=0b01010111;
     TRISAbits.RA0=0; 
     TRISCbits.RC2=0; 
-    int valoresSeno [20]= {10,20,30,40,50,60,70,80,90,100,90,80,70,60,50,40,30,20,10,0};
+    int sinValues [20];
+    int x , aux;
+    aux=0;
+    for ( x = 0; i <20; i++)
+    {
+        if (x<10)
+        {
+            aux -=10;
+        }
+        else
+        {
+            aux +=10;
+        }
+        sinValues[x]=aux;
+        
+    }
     int i, j,k;
     for (i=0;i<20;i++)
     {    
-        valoresSeno [i]=valoresSeno [i]/2;
+        sinValues [i]=sinValues [i]/2;
     }
     
     while(1)
@@ -49,12 +81,12 @@ void  TRI_2()
        
         for (i=0;i<20;i++)
         {    
-            for (j=0;j<valoresSeno[i];j++)
+            for (j=0;j<sinValues[i];j++)
             {
                 PORTCbits.RC2=1;
                 PORTAbits.RA6=1;
             }
-            k=100/2-valoresSeno[i];
+            k=100/2-sinValues[i];
             for (j=0;j<k;j++)
             {
                PORTCbits.RC2=0;
@@ -70,11 +102,26 @@ void  TRI_3()
     OSCCON=0b01010111;
     TRISAbits.RA6=0; 
     TRISCbits.RC2=0; 
-    int valoresSeno [20]= {10,20,30,40,50,60,70,80,90,100,90,80,70,60,50,40,30,20,10,0};
+    int sinValues [20];
+    int x , aux;
+    aux=0;
+    for ( x = 0; i <20; i++)
+    {
+        if (x<10)
+        {
+            aux -=10;
+        }
+        else
+        {
+            aux +=10;
+        }
+        sinValues[x]=aux;
+        
+    }
     int i, j,k;
     for (i=0;i<20;i++)
     {    
-        valoresSeno [i]=valoresSeno [i]/4;
+        sinValues [i]=sinValues [i]/4;
     }
     
     while(1)
@@ -82,12 +129,12 @@ void  TRI_3()
 
         for (i=0;i<20;i++)
         {    
-            for (j=0;j<valoresSeno[i];j++)
+            for (j=0;j<sinValues[i];j++)
             {
                 PORTCbits.RC2=1;
                 PORTAbits.RA6=1;
             }
-            k=100/4-valoresSeno[i];
+            k=100/4-sinValues[i];
             for (j=0;j<k;j++)
             {
                  PORTCbits.RC2=0;
