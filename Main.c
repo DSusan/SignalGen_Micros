@@ -358,7 +358,7 @@ void main(void)
 
                     X=A*1000;
                     
-                    cant =  Conv_Entero(X,cad);
+                    cant =  convertir_entero(X,cad);
                     unsigned char fre=0;
                     PWM_generar(Z,M);
                 
@@ -367,7 +367,7 @@ void main(void)
                     Lcd_Chr_CP(A);
                     Lcd_Out2(2,1,"C: ");
                     Lcd_Out2(2,7,"%");
-                    cantidad = Conv_Entero(Z,cadena);
+                    cantidad = convertir_entero(Z,cadena);
                     Lcd_Out(2,4,cadena);
                     do
                     {
