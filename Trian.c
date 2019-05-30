@@ -7,7 +7,7 @@ void  TRI_1()
     int sinValues [20];
     int x , aux;
     aux=0;
-    for ( x = 0; i <20; i++)
+    for ( x = 0; x <20; x++)
     {
         if (x<10)
         {
@@ -57,7 +57,7 @@ void  TRI_2()
     int sinValues [20];
     int x , aux;
     aux=0;
-    for ( x = 0; i <20; i++)
+    for ( x = 0; x <20; x++)
     {
         if (x<10)
         {
@@ -105,7 +105,7 @@ void  TRI_3()
     int sinValues [20];
     int x , aux;
     aux=0;
-    for ( x = 0; i <20; i++)
+    for ( x = 0; x <20; x++)
     {
         if (x<10)
         {

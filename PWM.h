@@ -3,7 +3,7 @@
 
 #include <xc.h>
 
-#define GOBAL_FREQ 4000000
+#define _XTAL_FREQ 4000000
 void PWM_generar( unsigned int ciclo, unsigned int frecuencia);
 
 #endif
