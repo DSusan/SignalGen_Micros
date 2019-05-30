@@ -73,4 +73,4 @@
 // Use project enums instead of #define for ON and OFF.
 
 //#include <xc.h>
-#define _XTAL_FREQ 4000000 
+#define GOBAL_FREQ 4000000 

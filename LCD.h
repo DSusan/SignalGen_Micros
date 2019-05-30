@@ -37,7 +37,7 @@
 #define      LCD_SHIFT_LEFT          24
 #define      LCD_SHIFT_RIGHT         28
 
-#define _XTAL_FREQ 4000000
+#define GOBAL_FREQ 4000000
 void Lcd_Init(void);
 void Lcd_Out(unsigned char y, unsigned char x, const char *buffer);
 void Lcd_Out2(unsigned char y, unsigned char x, char *buffer);
