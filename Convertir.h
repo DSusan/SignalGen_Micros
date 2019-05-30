@@ -1,44 +1,42 @@
-int convertir_entero(long long entero,char* convertir)
+int Conv_Entero(long long numero,char* conv)
 {
-    register long long  registroNum = entero;
-    char  convTemp[21]; 
-    register char *p;
-    register int numero=0;
+    char  convTemp[21]; //longitud maxima de long 12 digitos con signo
+    register char *punteroActual;
+    register int num=0;
     register char i=0;
+    register long long  numeroReg = numero;//paso el numero a un registro para aumentar rendimiento
 
-    //se llena el registro como si fuera una pila (el ultimo es el primero) y
-    //se añade al final el caracter nulo
-    p = &convTemp[21 - 1]; 
-    *p = 0; 
+    punteroActual = &convTemp[21 - 1]; //empezamos llenando desde la ultima posicion
+    *punteroActual = 0; //guarda el fin de cadena en la ultima posicion
 
-    if (registroNum < 0)
+    if( numeroReg < 0)
     {
-        registroNum*=-1;
+        numeroReg*=-1;
     }
 
-    //ciclo para convertir valores en caracteres
     do {
-        p--;
-        numero=registroNum % 10; 
-        *p = numero  + '0'; 
-    }  while (registroNum /= 10);
+        punteroActual--;//se decrementa la posicion donse guardara el valor
+        num=numeroReg % 10; //obtiene el digito de mayor peso
+        //num1=abs(num);//un if es mas rapido que una multiplicacion por -1 si es negativo el valor
+        *punteroActual = num  + '0'; //convierte el valor en caracter
+    }  while(numeroReg /= 10); //mientras exista un digito sigue el ciclo
 
-    //agrega el signo negativo si el numero entero es negativo
-    if (entero < 0)
+    if ( numero < 0)
     {
-        p--;
-        *p = '-';
+        punteroActual--;
+        *punteroActual = '-';//si el numero es negativo guarda el signo negativo
     }
 
-    //se restan los caracteres utilizados
-
-    registroNum=convTemp+21-p;
-
-    // se guardan en el arreglo convertir
-    for (i = 0; i< registroNum; i++)
+    numeroReg=convTemp+21-punteroActual;//realiza la resta de cuantos caracteres se utilizaron
+    for (i = 0; i< numeroReg; i++) //hace un ciclo burbuja optimizado
     {
-        ((unsigned char *)convertir)[i] = ((const unsigned char *)p)[i];
+        //toma como base para copiar el ultimo digito utilizado
+        //ejemplo
+       // convTemp="xxxxxxx-156\0"
+       // punteroActual = "-156\0"
+        //conv="-156\0"
+        ((unsigned char *)conv)[i] = ((const unsigned char *)punteroActual)[i];
     }
 
-    return registroNum - 1;
+    return numeroReg - 1;
 }
