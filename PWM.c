@@ -3,7 +3,7 @@ void PWM_generar( unsigned int ciclo, unsigned int frecuencia)
 {       
     TRISCbits.RC1=0;
     
-    unsigned long result_PR2 = GOBAL_FREQ;
+    unsigned long result_PR2 = _XTAL_FREQ;
     result_PR2=result_PR2/frecuencia;
     result_PR2=result_PR2/4;  
     T2CON=0b00000000;
