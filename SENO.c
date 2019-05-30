@@ -7,7 +7,7 @@ void SENO_1()
     TRISCbits.RC2=0; 
 
     int sinValues[20]= {50, 35, 21, 10, 2, 0, 2, 10, 21, 35, 50, 65, 79, 90, 98, 100, 98, 90, 79, 65};
-    int x, y, z;
+    int x, y, z
     for (x = 0 ; x < 20 ; x++)
     {    
         sinValues[x] = sinValues[x];
